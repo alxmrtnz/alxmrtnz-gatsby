@@ -1,0 +1,160 @@
+$home-mono-type-margin-vertical: 60px;/*
+@value fonts: "../globals/fonts.css";
+@value colors: "../globals/colors.css";
+@value gray-color from colors;
+@value fontSansSerif, fontSerif, fontMonotype from fonts; */
+
+@import '../sass/abstracts/colors';
+
+.wrapper {
+  font-family: fontSansSerif;
+  align-items: center;
+  background: $gray-color;
+  border: 17px solid #fff;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapperInner {
+  margin: auto;
+  z-index: 2;
+}
+
+.bio {
+  position: relative;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.copy {
+    /* font-family: $sans-serif; */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 28px;
+    line-height: 36px;
+/*
+    @media screen and (min-width: $on-palm) {
+        font-size: 40px;
+      line-height: 48px;
+    }
+    @media screen and (min-width: $on-laptop) {
+      font-size: 58px;
+      line-height: 69px;
+    } */
+  }
+
+
+.homeLinks {
+  margin-top: $home-mono-type-margin-vertical;
+  text-align: center;
+}
+
+.homeLink {
+  display: inline-block;
+  list-style: none;
+  margin: 0px 15px;
+}
+
+.socialIconList {
+  margin-bottom: $home-mono-type-margin-vertical - 30;
+  text-align: center;
+  width: 100%;
+}
+
+.socialIconListItem {
+  display: inline-block;
+  font-size: 20px;
+  list-style: none;
+  margin: 0px 8px 0px 0px;
+
+  a {
+    color: gray-color-dark;
+
+    &:hover {
+      color: $brand-color;
+    }
+  }
+}
+
+.bgImages {
+  bottom: 0;
+  left: 0;
+  opacity: .3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.bgImageContainer {
+  height: 100%;
+  width: 100%;
+
+  &:before {
+    background: gray-color;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &:after {
+    background: #050110;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.bgImage {
+  background-position-x: 70%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -webkit-filter: grayscale(1) contrast(1.1) brightness(1.1);
+  /* background: url(../assets/images/auba.jpg) no-repeat center center fixed; */
+  background-size: cover;
+  filter: grayscale(1) contrast(1.1) brightness(1.1);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+
+  @media screen and (min-width: $on-palm) {
+      background-position-x: auto;
+  }
+}
+
+.footballTrigger {
+  &:hover {
+    cursor: help;
+  }
+}
+
+.bgImageToggle {
+  opacity: 0;
+  transition: opacity .2s ease-in;
+
+  &.show-opacity {
+    opacity: 1;
+  }
+}
